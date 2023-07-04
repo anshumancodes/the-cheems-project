@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cheems Converter</title>
+    
+  </head>
+  <body>
+    <h1>Cheems Converter</h1>
+    <input type="text" id="sentence" placeholder="Enter a sentence">
+    <button onclick="convertToCheems()">Convert</button>
+    <p id="result"></p>
+    <script>
+        function convertToCheems() {
+          var sentence = document.getElementById("sentence").value;
+          var words = sentence.split(" ");
+          var cheemsSentence = "";
+  
+          for (var i = 0; i < words.length; i++) {
+            var word = words[i];
+  
+            if (word.endsWith("er")) {
+              cheemsWord = word.slice(0, -2) + "em";
+            } else if (word.endsWith("th")) {
+              cheemsWord = word.slice(0, -2) + "f";
+            } else if (word.endsWith("e")) {
+              cheemsWord = word.slice(0, -1) + "em";
+            } else {
+              cheemsWord = word + "em";
+            }
+  
+            cheemsSentence += cheemsWord + " ";
+          }
+  
+          document.getElementById("result").textContent = cheemsSentence.trim();
+        }
+      </script>
+  </body>
+</html>
