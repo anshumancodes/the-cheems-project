@@ -2,12 +2,45 @@
 <html>
   <head>
     <title>Cheems Converter</title>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+      *{
+        font-family: 'Inter', sans-serif;
+      }
+      body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      body  form {
+        display: flex;
+        gap: 3vw;
+        flex-wrap: wrap;
+      }
+      body  form input{
+        height: 5vh;
+        width: 400px;
+      }
+      body form button{
+        height: 6vh;
+        width: 100px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <h1>Cheems Converter</h1>
-    <input type="text" id="sentence" placeholder="Enter a sentence">
+    <form action="">
+      <input type="text" id="sentence" placeholder="Enter a sentence">
     <button onclick="convertToCheems()">Convert</button>
+    </form>
     <p id="result"></p>
     <script>
         function convertToCheems() {
